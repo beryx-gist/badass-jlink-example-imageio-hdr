@@ -17,6 +17,8 @@ This example project shows how to use [TwelveMonkeys/ImageIO](https://github.com
 
 
 **Creating a package (a platform-specific installer):**
+
+```
 ./gradlew jpackage
 ```
 
