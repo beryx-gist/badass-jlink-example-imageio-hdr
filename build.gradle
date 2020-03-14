@@ -1,0 +1,30 @@
+plugins {
+    id "org.beryx.jlink" version "2.17.2"
+    id "org.javamodularity.moduleplugin" version "1.6.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencies {
+    implementation 'com.twelvemonkeys.imageio:imageio-hdr:3.5'
+}
+
+mainClassName = 'org.beryx.modular.imageio/org.beryx.modular.imageio.ImageIODemo'
+jar {
+    manifest {
+        attributes 'Implementation-Title': "imageio",
+                'Main-Class': 'org.beryx.modular.imageio.ImageIODemo'
+    }
+}
+
+jlink {
+    jpackage {
+//        installerType = 'msi'
+//        installerOptions = ['--win-per-user-install', '--win-dir-chooser', '--win-menu']
+    }
+}
